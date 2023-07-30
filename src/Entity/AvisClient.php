@@ -23,6 +23,13 @@ class AvisClient
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $datePublication = null;
 
+    #[ORM\ManyToOne(inversedBy: 'avisClients')]
+    private ?Category $category = null;
+
+    #[ORM\ManyToOne(inversedBy: 'avisClients')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Author $author = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -60,6 +67,30 @@ class AvisClient
     public function setDatePublication(\DateTimeInterface $datePublication): static
     {
         $this->datePublication = $datePublication;
+
+        return $this;
+    }
+
+    public function getCategory(): ?Category
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?Category $category): static
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
+    public function getAuthor(): ?Author
+    {
+        return $this->author;
+    }
+
+    public function setAuthor(?Author $author): static
+    {
+        $this->author = $author;
 
         return $this;
     }
