@@ -1,0 +1,212 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}La Table Élégance
+{% endblock %}
+
+{% block body %}
+	<div>
+		<h1 class="text-center my-5">La Table Élégance</h1>
+		{# carousel start #}
+		<div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+			<div class="carousel-inner">
+				<div class="carousel-item active" data-bs-interval="1000">
+					<img src="https://a.cdn-hotels.com/gdcs/production88/d804/e87b353a-6c67-48a9-800e-e43c8826a51b.jpg?impolicy=fcrop&w=1600&h=1066&q=medium" class="d-block w-100" alt="...">
+				</div>
+				<div class="carousel-item" data-bs-interval="2000">
+					<img src="https://uploads.lebonbon.fr/source/2021/september/42390/gastro_2_1200.jpg" class="d-block w-100" alt="...">
+				</div>
+				<div class="carousel-item">
+					<img src="https://assets.afcdn.com/story/20230306/2212166_w1888h1060c1cx1057cy587cxt0cyt0cxb2121cyb1277.webp" class="d-block w-100" alt="...">
+				</div>
+			</div>
+			<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Previous</span>
+			</button>
+			<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Next</span>
+			</button>
+		</div>
+		{# carousel end #}
+
+
+		{# Menu start #}
+		<div class="my-5 text-center ">
+			<h2 class="my-5">Menu du restaurant</h2>
+			<div class="d-flex justify-content-center">
+				<img src="https://themewagon.github.io/restaurantly/assets/img/menu/lobster-bisque.jpg" style="width: 150px; height: 150px;" class="rounded-circle" alt="">
+				<div class="align-self-center p-5">
+					<div class="menu-content ">
+						<a href="#">Lobster Bisque</a>
+						<span>..................</span>
+						<span class="text-warning bg-dark p-2">25€</span>
+					</div>
+					<div class="menu-ingredients my-3">
+						Lorem, deren, trataro, filede, nerada lore
+					</div>
+				</div>
+			</div>
+
+
+			<div class="d-flex justify-content-center">
+				<img src="https://themewagon.github.io/restaurantly/assets/img/menu/lobster-bisque.jpg" style="width: 150px; height: 150px;" class="rounded-circle" alt="">
+				<div class="align-self-center p-5">
+					<div class="menu-content ">
+						<a href="#">Lobster Bisque</a>
+						<span>..................</span>
+						<span class="text-warning bg-dark p-2">25€</span>
+					</div>
+					<div class="menu-ingredients my-3">
+						Lorem, deren, trataro, filede, nerada lore
+					</div>
+				</div>
+			</div>
+
+
+			<div class="d-flex justify-content-center">
+				<img src="https://themewagon.github.io/restaurantly/assets/img/menu/lobster-bisque.jpg" style="width: 150px; height: 150px;" class="rounded-circle" alt="">
+				<div class="align-self-center p-5">
+					<div class="menu-content ">
+						<a href="#">Lobster Bisque</a>
+						<span>..................</span>
+						<span class="text-warning bg-dark p-2">25€</span>
+					</div>
+					<div class="menu-ingredients my-3">
+						Lorem, deren, trataro, filede, nerada lore
+					</div>
+				</div>
+			</div>
+		</div>
+		{# Menu end #}
+
+		{# notre restaurant start #}
+		<h2 class="text-center my-5">notre restaurant</h2>
+		<div class="d-flex justify-content-around column-gap-3">
+			<img class="resto w-50" src="https://img-3.journaldesfemmes.fr/H20vVHBaJmY2sDsnU2QmOldtvNI=/1500x/smart/e215672b6c2c4199accb23e4406c5967/ccmcms-jdf/32506409.jpg" alt="notre restaurant">
+			<div class="align-self-center">
+				<p>Bienvenue chez La table élégance, votre destination gastronomique d'exception !
+					<br>
+					Savourez une cuisine raffinée, des ingrédients de qualité et un service attentif. Réservez dès maintenant pour une expérience inoubliable.
+					<br>
+					À bientôt chez La table élégance!</p>
+				<p>
+					<strong>88, Rue des jardins, 75010 Paris</strong><br>Ouvert tous les jours de 12h00 à 14h30<br>et de 19h00 à 22h30</p>
+				<p>Tel :
+					<a style="font-family: playfair display; font-size: 18px; color: #000000;" href="tel:0000000">01 40 37 39 12</a>
+				</p>
+			</div>
+		</div>
+		{# notre restaurant end #}
+
+    {# Avis #}
+	<h2 class="text-center my-5">Avis de nos client</h2>
+	<div>
+	</div>
+    
+
+
+	</div>
+{% endblock %}
+
+
+{# menu répépétiv mettre en ficture #}
+
+{# 
+		<div class="text-center my-5">
+        <h2 class="my-5">Menu du Restaurant</h2>
+
+        <h3>Menu Carte Blanche</h3>
+        <p class="my-5">Dernières commandes en semaine à 22h et en week-end 22h30</p>
+
+        <h3>4 Étapes (pour l'ensemble de la table) --- 79 €</h3>
+        <p>Amuse-bouche, entrée, poisson, viande, dessert.</p>
+
+        <h3>6 Étapes (pour l'ensemble de la table) --- 98 €</h3>
+        <p>Amuse-bouche, 2 entrées, poisson, viande, pré dessert, dessert.</p>
+
+        <h3>Prestige (pour l'ensemble de la table) --- 128 €</h3>
+        <p>Amuse-bouche, 3 entrées, crustacés, viande, pré dessert, dessert.</p>
+
+        <h2 class="my-5">Accord Mets et Vins</h2>
+        <p>Découverte 2 verres 39 €</p>
+        <p>Evasion 3 verres 59 €</p>
+        <p>Prestige 5 verres 79 €</p>
+
+        <h2>À la Carte</h2>
+        <p>Dernières commandes en semaine à 22h et en week-end 22h30</p>
+
+        <!-- Plats à la carte -->
+        <h3>Daurade marinée aux agrumes --- 32 €</h3>
+        <p>Chou-rave et fenouil au basilic, vinaigrette d’olives noires, gelée de kiwi</p>
+
+        <h3>Terrine de foie-gras au sauternes --- 39 €</h3>
+        <p>Framboises et crumble de grué de cacao</p>
+
+        <h3>Fleurs de courgettes farcies à la mousse de seiche 39 €</h3>
+        <p>Pesto de courgettes</p>
+
+        <h3>Rouget grondin rôti --- 45 €</h3>
+        <p>Courgette et pommes de terre, soupe de poisson, accompagné d’aïoli</p>
+
+        <h3>Selle d’agneau rôti --- 45 €</h3>
+        <p>Petits pois et oignon nouveau, ris d’agneau croustillant, jus corsé et roquefort</p>
+
+        <h3>Homard bleu rôti au beurre --- 59 €</h3>
+        <p>Fricassée de girolles et abricot, sauce carapace</p>
+
+        <h3>Rhubarbe pochée --- 17 €</h3>
+        <p>Gelée infusée au thé earl grey, sorbet fraise basilic et gavottes croustillantes</p>
+
+        <h3>Sablé au chocolat à la fleur de sel --- 17 €</h3>
+        <p>Biscuit moelleux arrosé à la fleur de sureau, cerises et crème onctueuse</p>
+
+        <h3>Fromages à la carte --- 19 €</h3>
+
+        <h2>Menu Déjeuner</h2>
+        <p>(Uniquement le midi en semaine, hors jours fériés)</p>
+
+        <p>Entrée / Plat ou Plat / Dessert 35 €</p>
+        <p>au choix parmi les mets notés d’un Astérisque (*)</p>
+
+        <p>Entrée / Plat / Dessert --- 42 €</p>
+        <p>au choix parmi les mets notés d’un Astérisque (*)</p>
+
+        <!-- Plats du menu déjeuner -->
+        <h3>Filet de canette fumé --- 16 €</h3>
+        <p>Salade de fenouil et betterave, pesto de roquette et réduction de vinaigre balsamique</p>
+
+        <h3>Velouté de carottes glacé --- 16 €</h3>
+        <p>Gambas pochées et amandes grillées, curry madras</p>
+
+        <h3>Sériole marinée --- 32 €</h3>
+        <p>Jus de concombre et melon au gingembre, condiments de citron vert, gelée de shiso rouge</p>
+
+        <h3>Poisson du Marché --- 25 €</h3>
+
+        <h3>Suprême de poulet fermier rôti --- 25 €</h3>
+        <p>Pommes de terre grenaille, girolles et maïs, jus corsé au foie gras</p>
+
+        <h3>Lieu jaune en vapeur --- 39 €</h3>
+        <p>Aubergine grillée, seiche en sauce vierge à la pistache</p>
+
+        <h3>Filet de boeuf simmental --- 45 €</h3>
+        <p>Tomate rôti au basilic et mini carottes violettes, pommes purée</p>
+
+        <h3>Abricot poché aux épices --- 12 €</h3>
+        <p>Huile d’olive et amandes fraîches</p>
+
+        <h3>Chips de tapioca croustillantes, sorbet à la framboise --- 15 €</h3>
+        <p>Crème fraîche d’isigny et gel parfumé à l’estragon</p>
+
+        <h3>Sablé au chocolat à la fleur de sel --- 17 €</h3>
+        <p>Biscuit moelleux arrosé à la fleur de sureau, cerises et crème onctueuse</p>
+
+        <h3>Fromage à la carte --- 19 €</h3>
+
+        <h2>ACCORD METS ET VINS</h2>
+        <p>Découverte 2 verres --- 39 €</p>
+        <p>Evasion 3 verres --- 59 €</p>
+        <p>Prestige 5 verres --- 79 €</p>
+
+    </div> #}
