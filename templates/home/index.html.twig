@@ -99,114 +99,42 @@
 		</div>
 		{# notre restaurant end #}
 
-    {# Avis #}
-	<h2 class="text-center my-5">Avis de nos client</h2>
-	<div>
-	</div>
-    
+		{# reviews start #}
+		<h2 class="text-center my-5">Avis de nos client</h2>
+		<div class="d-flex flex-wrap justify-content-center">
+			{# exemple boucle sur le reviews #}
+			{# {{dump(reviews) }}
+									<ul>
+										{% for item in reviews %}
+											{% set note = item.note %}
+											<li>
+												<h6>{{item.name}}</h6>
+												<p>{{item.message}}</p>
+												{% for star in 0..note %}
+													⭐
+												{% endfor %}
+											</li>
+										{% endfor %}
+									</ul> #}
+			{# {{dump(reviews) }} #}
+				{% for item in reviews %}
+				{% set note = item.note %}
+					<div class="card m-3 " style="width: 18rem;"> <div class="card-body">
+						<h5 class="card-title">{{item.name}}</h5>
+						<p>{{ item.DatePublication|date('Y-m-d') }}</p>
+						<p class="card-text">{{item.message}}</p>
+						{% for star in 4..note %}
+							⭐
+						{% endfor %}
+						
+						<p>
+							<a href="#" class="btn btn-primary my-2">Voir</a>
+						</p>
+					</div>
+				</div>
+			{% endfor %}
 
-
+		</div>
+		{# reviews end #}
 	</div>
 {% endblock %}
-
-
-{# menu répépétiv mettre en ficture #}
-
-{# 
-		<div class="text-center my-5">
-        <h2 class="my-5">Menu du Restaurant</h2>
-
-        <h3>Menu Carte Blanche</h3>
-        <p class="my-5">Dernières commandes en semaine à 22h et en week-end 22h30</p>
-
-        <h3>4 Étapes (pour l'ensemble de la table) --- 79 €</h3>
-        <p>Amuse-bouche, entrée, poisson, viande, dessert.</p>
-
-        <h3>6 Étapes (pour l'ensemble de la table) --- 98 €</h3>
-        <p>Amuse-bouche, 2 entrées, poisson, viande, pré dessert, dessert.</p>
-
-        <h3>Prestige (pour l'ensemble de la table) --- 128 €</h3>
-        <p>Amuse-bouche, 3 entrées, crustacés, viande, pré dessert, dessert.</p>
-
-        <h2 class="my-5">Accord Mets et Vins</h2>
-        <p>Découverte 2 verres 39 €</p>
-        <p>Evasion 3 verres 59 €</p>
-        <p>Prestige 5 verres 79 €</p>
-
-        <h2>À la Carte</h2>
-        <p>Dernières commandes en semaine à 22h et en week-end 22h30</p>
-
-        <!-- Plats à la carte -->
-        <h3>Daurade marinée aux agrumes --- 32 €</h3>
-        <p>Chou-rave et fenouil au basilic, vinaigrette d’olives noires, gelée de kiwi</p>
-
-        <h3>Terrine de foie-gras au sauternes --- 39 €</h3>
-        <p>Framboises et crumble de grué de cacao</p>
-
-        <h3>Fleurs de courgettes farcies à la mousse de seiche 39 €</h3>
-        <p>Pesto de courgettes</p>
-
-        <h3>Rouget grondin rôti --- 45 €</h3>
-        <p>Courgette et pommes de terre, soupe de poisson, accompagné d’aïoli</p>
-
-        <h3>Selle d’agneau rôti --- 45 €</h3>
-        <p>Petits pois et oignon nouveau, ris d’agneau croustillant, jus corsé et roquefort</p>
-
-        <h3>Homard bleu rôti au beurre --- 59 €</h3>
-        <p>Fricassée de girolles et abricot, sauce carapace</p>
-
-        <h3>Rhubarbe pochée --- 17 €</h3>
-        <p>Gelée infusée au thé earl grey, sorbet fraise basilic et gavottes croustillantes</p>
-
-        <h3>Sablé au chocolat à la fleur de sel --- 17 €</h3>
-        <p>Biscuit moelleux arrosé à la fleur de sureau, cerises et crème onctueuse</p>
-
-        <h3>Fromages à la carte --- 19 €</h3>
-
-        <h2>Menu Déjeuner</h2>
-        <p>(Uniquement le midi en semaine, hors jours fériés)</p>
-
-        <p>Entrée / Plat ou Plat / Dessert 35 €</p>
-        <p>au choix parmi les mets notés d’un Astérisque (*)</p>
-
-        <p>Entrée / Plat / Dessert --- 42 €</p>
-        <p>au choix parmi les mets notés d’un Astérisque (*)</p>
-
-        <!-- Plats du menu déjeuner -->
-        <h3>Filet de canette fumé --- 16 €</h3>
-        <p>Salade de fenouil et betterave, pesto de roquette et réduction de vinaigre balsamique</p>
-
-        <h3>Velouté de carottes glacé --- 16 €</h3>
-        <p>Gambas pochées et amandes grillées, curry madras</p>
-
-        <h3>Sériole marinée --- 32 €</h3>
-        <p>Jus de concombre et melon au gingembre, condiments de citron vert, gelée de shiso rouge</p>
-
-        <h3>Poisson du Marché --- 25 €</h3>
-
-        <h3>Suprême de poulet fermier rôti --- 25 €</h3>
-        <p>Pommes de terre grenaille, girolles et maïs, jus corsé au foie gras</p>
-
-        <h3>Lieu jaune en vapeur --- 39 €</h3>
-        <p>Aubergine grillée, seiche en sauce vierge à la pistache</p>
-
-        <h3>Filet de boeuf simmental --- 45 €</h3>
-        <p>Tomate rôti au basilic et mini carottes violettes, pommes purée</p>
-
-        <h3>Abricot poché aux épices --- 12 €</h3>
-        <p>Huile d’olive et amandes fraîches</p>
-
-        <h3>Chips de tapioca croustillantes, sorbet à la framboise --- 15 €</h3>
-        <p>Crème fraîche d’isigny et gel parfumé à l’estragon</p>
-
-        <h3>Sablé au chocolat à la fleur de sel --- 17 €</h3>
-        <p>Biscuit moelleux arrosé à la fleur de sureau, cerises et crème onctueuse</p>
-
-        <h3>Fromage à la carte --- 19 €</h3>
-
-        <h2>ACCORD METS ET VINS</h2>
-        <p>Découverte 2 verres --- 39 €</p>
-        <p>Evasion 3 verres --- 59 €</p>
-        <p>Prestige 5 verres --- 79 €</p>
-
-    </div> #}
