@@ -15,10 +15,11 @@ class HomeController extends AbstractController
     public function index(ReviewRepository $reviewRepository, PaginatorInterface $paginator, Request $request): Response
     {   
           // On créer une requête pour récupérer les snippets
-          $data = $reviewRepository->findAll();
+          $data = $reviewRepository->findBy([], ['datePublication' => 'DESC']);
 
             $pagination = $paginator->paginate(
             $data, // Requête contenant les données à paginer
+            
             $request->query->getInt('page', 1), // Numéro de la page en cours, 1 par défaut
             4 // Nombre de résultats par page
         );

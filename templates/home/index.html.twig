@@ -103,22 +103,6 @@
 		<h2 class="text-center my-5">Avis de nos client</h2>
     <a class="d-flex justify-content-center my-5"  href="{{ path('app_review_new') }}">Laisser votre avis</a>
 		<div class="d-flex flex-wrap justify-content-center">
-			{# exemple boucle sur le reviews #}
-			{# {{dump(reviews) }}
-																		<ul>
-																			{% for item in reviews %}
-																				{% set note = item.note %}
-																				<li>
-																					<h6>{{item.name}}</h6>
-																					<p>{{item.message}}</p>
-																					{% for star in 0..note %}
-																						⭐
-																					{% endfor %}
-																				</li>
-																			{% endfor %}
-																		</ul> #}
-			{# {{dump(reviews) }} #}
-
 				{% for item in reviews %}
 				{% set note = item.note %}
 					<div class="card m-3 " style="width: 18rem;"> <div class="card-body">
