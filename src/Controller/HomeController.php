@@ -15,6 +15,9 @@ class HomeController extends AbstractController
     public function index(ReviewRepository $reviewRepository, PaginatorInterface $paginator, Request $request): Response
     {   
           // On créer une requête pour récupérer les snippets
+        //    $user=$this->getUser();
+        // dd($user);
+        //  met dans le findBy ['user_id' => $user]
           $data = $reviewRepository->findBy([], ['datePublication' => 'DESC']);
 
             $pagination = $paginator->paginate(
@@ -23,13 +26,11 @@ class HomeController extends AbstractController
             $request->query->getInt('page', 1), // Numéro de la page en cours, 1 par défaut
             4 // Nombre de résultats par page
         );
-
+        
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
             'reviews' => $pagination
         ]);
-
-        
 
         
     }

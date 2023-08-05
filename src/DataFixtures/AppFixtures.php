@@ -17,7 +17,8 @@ class AppFixtures extends Fixture
            $avis->setName($faker->name());
            $avis->setDatePublication($faker->dateTimeBetween('-7 months'));
            $avis->setMessage($faker->text());
-           $avis->setNote($faker->numberBetween(0,4));
+        // la note se régle entre 4 étoiles et 5 étoiles
+           $avis->setNote($faker->numberBetween(4,5));
            $manager->persist($avis);
         }
         

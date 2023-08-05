@@ -100,8 +100,8 @@
 		{# notre restaurant end #}
 
 		{# reviews start #}
-		<h2 class="text-center my-5">Avis de nos client</h2>
-    <a class="d-flex justify-content-center my-5"  href="{{ path('app_review_new') }}">Laisser votre avis</a>
+		<h2 class="text-center my-5">Avis de nos clients</h2>
+    <p class="d-flex justify-content-center my-5 "><a class="btn btn-dark"  href="{{ path('app_review_new') }}">Laisser votre avis</a></p>
 		<div class="d-flex flex-wrap justify-content-center">
 				{% for item in reviews %}
 				{% set note = item.note %}
@@ -111,7 +111,8 @@
 							{{ item.DatePublication|date('Y-m-d')}}</p>
 						<p class="card-text">{{item.message}}</p>
 						<p>Avis cleint :
-							{% for star in 4..note %}
+						{# commence par 1 #}
+							{% for star in 1..note %} 
 								⭐
 							{% endfor %}
 						</p>
