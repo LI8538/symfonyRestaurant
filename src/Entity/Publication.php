@@ -26,11 +26,11 @@ class Publication
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $image = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $category = null;
+    #[ORM\ManyToOne(inversedBy: 'publications')]
+    private ?User $user = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $author = null;
+    #[ORM\ManyToOne(inversedBy: 'publications')]
+    private ?Category $category = null;
 
     public function getId(): ?int
     {
@@ -85,26 +85,30 @@ class Publication
         return $this;
     }
 
-    public function getCategory(): ?string
+
+
+
+
+    public function getUser(): ?User
     {
-        return $this->category;
+        return $this->user;
     }
 
-    public function setCategory(?string $category): static
+    public function setUser(?User $user): static
     {
-        $this->category = $category;
+        $this->user = $user;
 
         return $this;
     }
 
-    public function getAuthor(): ?string
+    public function getCategory(): ?Category
     {
-        return $this->author;
+        return $this->category;
     }
 
-    public function setAuthor(string $author): static
+    public function setCategory(?Category $category): static
     {
-        $this->author = $author;
+        $this->category = $category;
 
         return $this;
     }
