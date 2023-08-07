@@ -48,7 +48,6 @@
 				</div>
 			</div>
 
-
 			<div class="d-flex justify-content-center">
 				<img src="https://www.restaurant-pointe-saint-mathieu.com/uploads/media/reservation-hotel-restaurant-pointe-saint-mathieu-90645.jpg" style="width: 150px; height: 150px;" class="rounded-circle" alt="">
 				<div class="align-self-center p-5">
@@ -62,7 +61,6 @@
 					</div>
 				</div>
 			</div>
-
 
 			<div class="d-flex justify-content-center">
 				<img src="https://www.restaurant-pointe-saint-mathieu.com/uploads/media/reservation-hotel-restaurant-pointe-saint-mathieu-84896.jpg" style="width: 150px; height: 150px;" class="rounded-circle" alt="">
@@ -99,20 +97,61 @@
 		</div>
 		{# notre restaurant end #}
 
-		{# reviews start #}
-		<h2 class="text-center my-5">Avis de nos clients</h2>
-    <p class="d-flex justify-content-center my-5 "><a class="btn btn-dark"  href="{{ path('app_review_new') }}">Laisser votre avis</a></p>
+
+
+		{# publication start #}
+		<h2 class="text-center my-5">Les plus récente publications</h2>
+		<p class="d-flex justify-content-center my-5 ">
+			<a class="btn btn-dark" href="{{ path('app_publication_new') }}">Voir plus</a>
+		</p>
 		<div class="d-flex flex-wrap justify-content-center">
-				{% for item in reviews %}
+			{% for publication in publications|slice(0, 4) %}
+				{# Limite aux 3 premières publications #}
+				{# <tr>
+								<td>{{ publication.title }}</td>
+								<td>{{ publication.content }}</td>
+								<td>{{ publication.publishedAt ? publication.publishedAt|date('Y-m-d H:i:s') : '' }}</td>
+								<td>{{ publication.image }}</td>
+								<td>{{ publication.category.name }}</td>
+								<td>{{ publication.user.name }}</td>
+							</tr> #}
+
+					<div class="card m-5 " style="width: 25rem;"> <div class="card-body">
+						<h5 class="card-title">{{publication.title}}</h5>
+						<p>Rédiger par:
+							{{ publication.user.name }}
+						</p>
+						<p>Publie le :
+							{{ publication.publishedAt ? publication.publishedAt|date('Y-m-d H:i:s') : '' }}</p>
+						<img src="{{ asset('images') }}/{{ publication.image }}" class="card-img" alt="{{ publication.title }}">
+						<p class="card-text p-2 mt-3">{{publication.content}}</p>
+						<p class="p-1 bg-warning text-white w-50 text-center ">Catégorie:
+							<br>{{ publication.category.name }}</p>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+		{# {{ dump(publications) }} #}
+		{# publication end #}
+
+		{# reviews start #}
+		{# {{ dump(reviews) }} #}
+		<h2 class="text-center my-5"> Avis de nos clients</h2>
+		<p class="d-flex justify-content-center my-5 ">
+			<a class="btn btn-dark" href="{{ path('app_review_new') }}">Laisser votre avis</a>
+		</p>
+		<div class="d-flex flex-wrap justify-content-center">
+			{% for item in reviews %}
 				{% set note = item.note %}
-					<div class="card m-3 " style="width: 18rem;"> <div class="card-body">
+				<div class="card m-3 " style="width: 18rem;">
+					<div class="card-body">
 						<h5 class="card-title">{{item.name}}</h5>
 						<p>publie le :
 							{{ item.DatePublication|date('Y-m-d')}}</p>
 						<p class="card-text">{{item.message}}</p>
 						<p>Avis cleint :
-						{# commence par 1 #}
-							{% for star in 1..note %} 
+							{# commence par 1 #}
+							{% for star in 1..note %}
 								⭐
 							{% endfor %}
 						</p>
@@ -126,5 +165,10 @@
 		<div class="navigation d-flex flex-wrap justify-content-center m-5">
 			{{knp_pagination_render(reviews)}}
 		</div>
+
+
+		
+
+
 	</div>
 {% endblock %}
