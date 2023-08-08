@@ -15,6 +15,7 @@ class PublicationType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
+
         $builder
             ->add('title')
             ->add('content')
@@ -30,10 +31,11 @@ class PublicationType extends AbstractType
                 'class' => Category::class,
                 'choice_label' => 'name', // En supposant que 'name' est la propriété dans l'entité Category
             ])
-            ->add('user', EntityType::class, [
-                'class' => User::class,
-                'choice_label' => 'name', // En supposant que 'name' est la propriété dans l'entité User
-            ])
+            //ne pas mettre "user" en raison la personne connecte qui va rédiger la publication systématiquement
+            // ->add('user', EntityType::class, [
+            //     'class' => User::class,
+            //     'choice_label' => 'name', // En supposant que 'name' est la propriété dans l'entité User
+            // ])
         ;
     }
 
