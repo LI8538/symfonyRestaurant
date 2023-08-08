@@ -27,14 +27,14 @@ class PublicationController extends AbstractController
     }
 
 
-    // #[Route('/publication_All', name: 'publication_All', methods: ['GET'])]
-    // public function index(PublicationRepository $publicationRepository): Response
-    // {
-    //     return $this->render('pages/publication_All.html.twig', [
-    //         'publications' => $publicationRepository->findAll(),
+    #[Route('/all', name: 'publication_All', methods: ['GET'])]
+    public function all(PublicationRepository $publicationRepository): Response
+    {
+        return $this->render('pages/publication_All.html.twig', [
+            'publications' => $publicationRepository->findBy([], ['publishedAt' => 'DESC']),
             
-    //     ]);
-    // }
+        ]);
+    }
 
     #[Route('/new', name: 'app_publication_new', methods: ['GET', 'POST'])]
     // SluggerInterface $slugger pour les affichage d'image

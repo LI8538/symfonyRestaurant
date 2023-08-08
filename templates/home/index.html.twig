@@ -102,7 +102,7 @@
 		{# publication start #}
 		<h2 class="text-center my-5">Les plus récente publications</h2>
 		<p class="d-flex justify-content-center my-5 ">
-			<a class="btn btn-dark" href="{{ path('app_publication_new') }}">Voir plus</a>
+			<a class="btn btn-dark" href="{{ path('publication_All') }}">Voir plus</a>
 		</p>
 		<div class="d-flex flex-wrap justify-content-center">
 			{% for publication in publications|slice(0, 4) %}

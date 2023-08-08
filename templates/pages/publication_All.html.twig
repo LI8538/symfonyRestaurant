@@ -1,46 +1,46 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Publication index{% endblock %}
+{% block title %}La Table Élégance
+{% endblock %}
 
 {% block body %}
-    <h1>Publication index</h1>
+	<div>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Content</th>
-                <th>PublishedAt</th>
-                <th>Image</th>
-                <th>Category</th>
-                <th>Author</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for publication in publications %}
-        {# {{ dump(publication) }} #}
-            <tr>
-                <td>{{ publication.id }}</td>
-                <td>{{ publication.title }}</td>
-                <td>{{ publication.content }}</td>
-                <td>{{ publication.publishedAt ? publication.publishedAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ publication.image }}</td>
-                <td>{{ publication.category.name }}</td>
-                <td>{{ publication.user.name }}</td>
-                <td>
-                    <a href="{{ path('app_publication_show', {'id': publication.id}) }}">show</a>
-                    <a href="{{ path('app_publication_edit', {'id': publication.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="8">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+		{# publication start #}
+		<h2 class="text-center my-5">Les plus récente publications</h2>
+		<p class="d-flex justify-content-center my-5 ">
+			<a class="btn btn-dark" href="{{ path('app_publication_new') }}">Poster votre envie</a>
+		</p>
+		<div class="d-flex flex-wrap justify-content-center">
+			{% for publication in publications %}
+				{# Limite aux 3 premières publications #}
+				{# <tr>
+								<td>{{ publication.title }}</td>
+								<td>{{ publication.content }}</td>
+								<td>{{ publication.publishedAt ? publication.publishedAt|date('Y-m-d H:i:s') : '' }}</td>
+								<td>{{ publication.image }}</td>
+								<td>{{ publication.category.name }}</td>
+								<td>{{ publication.user.name }}</td>
+							</tr> #}
 
-    <a href="{{ path('app_publication_new') }}">Create new</a>
+					<div class="card m-5 " style="width: 20rem;"> <div class="card-body">
+						<h5 class="card-title">{{publication.title}}</h5>
+						<p>Rédiger par:
+							{{ publication.user.name }}
+						</p>
+						<p>Publie le :
+							{{ publication.publishedAt ? publication.publishedAt|date('Y-m-d H:i:s') : '' }}</p>
+						<img src="{{ asset('images') }}/{{ publication.image }}" class="card-img" alt="{{ publication.title }}">
+						<p class="card-text p-2 mt-3">{{publication.content}}</p>
+						<p class="p-1 bg-warning text-white w-50 text-center ">Catégorie:
+							<br>{{ publication.category.name }}</p>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+		{{ dump(publications) }}
+		{# publication end #}
+
+
+	</div>
 {% endblock %}
