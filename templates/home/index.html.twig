@@ -33,7 +33,7 @@
 
 		{# Menu start #}
 		<div class="my-5 text-center ">
-			<h2 class="my-5">Menu du restaurant</h2>
+			<h2 class="my-5">La carte du restaurant</h2>
 			<div class="d-flex justify-content-center">
 				<img src="https://www.restaurant-pointe-saint-mathieu.com/uploads/media/reservation-hotel-restaurant-pointe-saint-mathieu-90611.jpg" style="width: 150px; height: 150px;" class="rounded-circle" alt="">
 				<div class="align-self-center p-5">
@@ -138,7 +138,7 @@
 		{# {{ dump(reviews) }} #}
 		<h2 class="text-center my-5"> Avis de nos clients</h2>
 		<p class="d-flex justify-content-center my-5 ">
-			<a class="btn btn-dark" href="{{ path('app_review_new') }}">Laisser votre avis</a>
+			<a class="btn btn-dark" href="{{ path('app_review_all') }}">Voir plus d'avis</a>
 		</p>
 		<div class="d-flex flex-wrap justify-content-center">
 			{% for item in reviews %}
