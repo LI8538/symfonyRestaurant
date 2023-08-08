@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+{% block title %}La Table Élégance
+{% endblock %}
+{% block body %}
+	<div>
+		{# reviews start #}
+		{# {{ dump(reviews) }} #}
+		<h2 class="text-center my-5"> Avis de nos clients</h2>
+		<p class="d-flex justify-content-center my-5 ">
+			<a class="btn btn-dark" href="{{ path('app_review_new') }}">Laisser votre avis</a>
+		</p>
+		<div class="d-flex flex-wrap justify-content-center">
+			{% for item in reviews %}
+				{% set note = item.note %}
+				<div class="card m-3 " style="width: 18rem;">
+					<div class="card-body">
+						<h5 class="card-title">{{item.name}}</h5>
+						<p>publie le :
+							{{ item.DatePublication|date('Y-m-d')}}</p>
+						<p class="card-text">{{item.message}}</p>
+						<p>Avis cleint :
+							{# commence par 1 #}
+							{% for star in 1..note %}
+								⭐
+							{% endfor %}
+						</p>
+
+					</div>
+				</div>
+			{% endfor %}
+
+		</div>
+		{# reviews end #}
+		<div class="navigation d-flex flex-wrap justify-content-center m-5">
+			{{knp_pagination_render(reviews)}}
+		</div>
+
+		{# {{ dump(publications) }} #}
+		{# publication end #}
+	</div>
+{% endblock %}
