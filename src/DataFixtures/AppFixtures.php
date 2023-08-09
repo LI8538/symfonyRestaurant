@@ -5,7 +5,11 @@ namespace App\DataFixtures;
 use Faker\Factory;
 use App\Entity\Review;
 use App\Entity\Category;
+use App\Entity\Dessert;
+use App\Entity\Dish;
+use App\Entity\Drink;
 use App\Entity\Publication;
+use App\Entity\Starter;
 use App\Entity\User;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
@@ -15,8 +19,6 @@ class AppFixtures extends Fixture
     public function load(ObjectManager $manager): void
     {
         $faker = Factory::create('fr_FR');
-
-
 
          // Création d'un utilisateur ADMIN
         $user = new User();
@@ -172,7 +174,41 @@ class AppFixtures extends Fixture
 
 
 
+        for ($i=0; $i < 5 ; $i++) { 
+            $starter = new Starter();
+            $starter->setImage($faker->imageUrl(360, 360, 'animals', true, 'cats'));
+            $starter->setTitle($faker->word(8));
+            $starter->setIngredients($faker->text());
+            $starter->setPrice($faker->numberBetween(20, 50));
+            $manager->persist($starter);
+         }
 
+         for ($i=0; $i < 5 ; $i++) { 
+            $dish = new Dish();
+            $dish->setImage($faker->imageUrl(360, 360, 'animals', true, 'cats'));
+            $dish->setTitle($faker->word(8));
+            $dish->setIngredients($faker->text());
+            $dish->setPrice($faker->numberBetween(30, 50));
+            $manager->persist($dish);
+         }
+
+         for ($i=0; $i < 5 ; $i++) { 
+            $dessert = new Dessert();
+            $dessert->setImage($faker->imageUrl(360, 360, 'animals', true, 'cats'));
+            $dessert->setTitle($faker->word(8));
+            $dessert->setIngredients($faker->text());
+            $dessert->setPrice($faker->numberBetween(20, 30));
+            $manager->persist($dessert);
+         }
+
+         for ($i=0; $i < 5 ; $i++) { 
+            $drink = new Drink();
+            $drink->setImage($faker->imageUrl(360, 360, 'animals', true, 'cats'));
+            $drink->setTitle($faker->word(8));
+            $drink->setIngredients($faker->text());
+            $drink->setPrice($faker->numberBetween(50, 80));
+            $manager->persist($drink);
+         }
 
 
         $manager->flush();

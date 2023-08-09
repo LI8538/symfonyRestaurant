@@ -6,6 +6,10 @@
 # mettre le paramètre pour affihce les images
 parameters:
     images: '%kernel.project_dir%/public/images'
+    starter_images: '%kernel.project_dir%/public/images/starter'
+    dish_images: '%kernel.project_dir%/public/images/dish'
+    dessert_images: '%kernel.project_dir%/public/images/dessert'
+    drink_images: '%kernel.project_dir%/public/images/drink'
 
 services:
     # default configuration for services in *this* file

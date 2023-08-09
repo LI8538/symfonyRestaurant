@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Starter index{% endblock %}
+
+{% block body %}
+    <h1>Starter index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Image</th>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Ingredients</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for starter in starters %}
+            <tr>
+                <td>{{ starter.id }}</td>
+                <td>{{ starter.image }}</td>
+                <td>{{ starter.title }}</td>
+                <td>{{ starter.price }}</td>
+                <td>{{ starter.ingredients }}</td>
+                <td>
+                    <a href="{{ path('app_starter_show', {'id': starter.id}) }}">show</a>
+                    <a href="{{ path('app_starter_edit', {'id': starter.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_starter_new') }}">Create new</a>
+{% endblock %}

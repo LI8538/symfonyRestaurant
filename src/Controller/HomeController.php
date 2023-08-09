@@ -3,7 +3,11 @@
 namespace App\Controller;
 
 use App\Entity\Review;
+use App\Repository\DishRepository;
+use App\Repository\DrinkRepository;
 use App\Repository\ReviewRepository;
+use App\Repository\DessertRepository;
+use App\Repository\StarterRepository;
 use App\Repository\PublicationRepository;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\VarDumper\Cloner\Data;
@@ -15,7 +19,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class HomeController extends AbstractController
 {
     #[Route('/', name: 'app_home')]
-    public function index(ReviewRepository $reviewRepository, PaginatorInterface $paginator, Request $request, PublicationRepository $PublicationRepository): Response
+    public function index(ReviewRepository $reviewRepository, PaginatorInterface $paginator, Request $request, PublicationRepository $PublicationRepository, StarterRepository $StarterRepository, DishRepository $DishRepository, DessertRepository $DessertRepository,DrinkRepository $DrinkRepository ): Response
     {   
           // On créer une requête pour récupérer les snippets
         //    $user=$this->getUser();
@@ -24,6 +28,10 @@ class HomeController extends AbstractController
 
          // Récupérer les donnée de publications, avec trie de plus récent au plus anciens date
         $publications = $PublicationRepository->findBy([], ['publishedAt' => 'DESC']);
+        $starters = $StarterRepository->findAll();
+        $dishs = $DishRepository->findAll();
+        $desserts = $DessertRepository->findAll();
+        $drinks = $DrinkRepository->findAll();
 
 
 
@@ -40,7 +48,11 @@ class HomeController extends AbstractController
             'controller_name' => 'HomeController',
             'reviews' => $pagination,
             // injecte les données et donne 'publications' accès au template que j'ai choisi
-            'publications' => $publications
+            'publications' => $publications,
+            'starters' => $starters,
+            'dishs' => $dishs,
+            'desserts' => $desserts,
+            'drinks' => $drinks
         ]);
 
     }
