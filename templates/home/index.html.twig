@@ -33,189 +33,183 @@
 
 		{# Menu start #}
 		{# <div class="my-5 text-center ">
-			<h2 class="my-5">La carte du restaurant</h2>
-			<div class="d-flex justify-content-center">
-				<img src="https://www.restaurant-pointe-saint-mathieu.com/uploads/media/reservation-hotel-restaurant-pointe-saint-mathieu-90611.jpg" style="width: 150px; height: 150px;" class="rounded-circle" alt="">
-				<div class="align-self-center p-5">
-					<div class="menu-content ">
-						<a href="#">Lobster Bisque</a>
-						<span>..................</span>
-						<span class="text-warning bg-dark p-2">25€</span>
+					<h2 class="my-5">La carte du restaurant</h2>
+					<div class="d-flex justify-content-center">
+						<img src="https://www.restaurant-pointe-saint-mathieu.com/uploads/media/reservation-hotel-restaurant-pointe-saint-mathieu-90611.jpg" style="width: 150px; height: 150px;" class="rounded-circle" alt="">
+						<div class="align-self-center p-5">
+							<div class="menu-content ">
+								<a href="#">Lobster Bisque</a>
+								<span>..................</span>
+								<span class="text-warning bg-dark p-2">25€</span>
+							</div>
+							<div class="menu-ingredients my-3">
+								Lorem, deren, trataro, filede, nerada lore
+							</div>
+						</div>
 					</div>
-					<div class="menu-ingredients my-3">
-						Lorem, deren, trataro, filede, nerada lore
+		
+					<div class="d-flex justify-content-center">
+						<img src="https://www.restaurant-pointe-saint-mathieu.com/uploads/media/reservation-hotel-restaurant-pointe-saint-mathieu-90645.jpg" style="width: 150px; height: 150px;" class="rounded-circle" alt="">
+						<div class="align-self-center p-5">
+							<div class="menu-content ">
+								<a href="#">Lobster Bisque</a>
+								<span>..................</span>
+								<span class="text-warning bg-dark p-2">25€</span>
+							</div>
+							<div class="menu-ingredients my-3">
+								Lorem, deren, trataro, filede, nerada lore
+							</div>
+						</div>
 					</div>
-				</div>
-			</div>
-
-			<div class="d-flex justify-content-center">
-				<img src="https://www.restaurant-pointe-saint-mathieu.com/uploads/media/reservation-hotel-restaurant-pointe-saint-mathieu-90645.jpg" style="width: 150px; height: 150px;" class="rounded-circle" alt="">
-				<div class="align-self-center p-5">
-					<div class="menu-content ">
-						<a href="#">Lobster Bisque</a>
-						<span>..................</span>
-						<span class="text-warning bg-dark p-2">25€</span>
+		
+					<div class="d-flex justify-content-center">
+						<img src="https://www.restaurant-pointe-saint-mathieu.com/uploads/media/reservation-hotel-restaurant-pointe-saint-mathieu-84896.jpg" style="width: 150px; height: 150px;" class="rounded-circle" alt="">
+						<div class="align-self-center p-5">
+							<div class="menu-content ">
+								<a href="#">Lobster Bisque</a>
+								<span>..................</span>
+								<span class="text-warning bg-dark p-2">25€</span>
+							</div>
+							<div class="menu-ingredients my-3">
+								Lorem, deren, trataro, filede, nerada lore
+							</div>
+						</div>
 					</div>
-					<div class="menu-ingredients my-3">
-						Lorem, deren, trataro, filede, nerada lore
-					</div>
-				</div>
-			</div>
-
-			<div class="d-flex justify-content-center">
-				<img src="https://www.restaurant-pointe-saint-mathieu.com/uploads/media/reservation-hotel-restaurant-pointe-saint-mathieu-84896.jpg" style="width: 150px; height: 150px;" class="rounded-circle" alt="">
-				<div class="align-self-center p-5">
-					<div class="menu-content ">
-						<a href="#">Lobster Bisque</a>
-						<span>..................</span>
-						<span class="text-warning bg-dark p-2">25€</span>
-					</div>
-					<div class="menu-ingredients my-3">
-						Lorem, deren, trataro, filede, nerada lore
-					</div>
-				</div>
-			</div>
-		</div> #}
+				</div> #}
 		{# Menu end #}
 
 
-
-
-{# starter start #}
+		{# starter start #}
 		{# <h2>starter</h2>
-		{{ dump(starters) }}
-			<div class="d-flex flex-column card mb-3 my-" style="max-width: 540px;">
-{% for starter in starters %}
-<div class="d-flex justify-content-center align-items-center">
-				<img src="{{ asset('images/starter') }}/{{ starter.image }}" style="width: 150px; height: 150px;" class="rounded-circle" alt="">
-				
-				<div class="align-self-center p-5">
-					<div class="menu-content ">
-						<a href="#">{{ starter.title }}</a>
-						<span class="text-warning bg-dark p-2">{{ starter.price }}€</span>
-					</div>
-					<div class="menu-ingredients my-3">
-						{{ starter.ingredients }}
-					</div>
+				{{ dump(starters) }}
+					<div class="d-flex flex-column card mb-3 my-" style="max-width: 540px;">
+		{% for starter in starters %}
+		<div class="d-flex justify-content-center align-items-center">
+						<img src="{{ asset('images/starter') }}/{{ starter.image }}" style="width: 150px; height: 150px;" class="rounded-circle" alt="">
+						
+						<div class="align-self-center p-5">
+							<div class="menu-content ">
+								<a href="#">{{ starter.title }}</a>
+								<span class="text-warning bg-dark p-2">{{ starter.price }}€</span>
+							</div>
+							<div class="menu-ingredients my-3">
+								{{ starter.ingredients }}
+							</div>
+						</div>
+		</div>				
+		{% endfor %}
+		
+			</div> #}
+		{# starter end #}
+
+		{# starters start #}
+			<div class="container-fluid"> <div class="row justify-content-center">
+				<h2 class="text-center my-5" id="laCarte">La carte du restaurant</h2>
+				<h2 class="text-center my-5">Entrée</h2>
+				<div class="col-lg-6 col-md-8 col-10">
+					{% for starter in starters %}
+						<div class="d-flex align-items-center mb-3">
+							<img src="{{ asset('images/starter/' ~ starter.image) }}" style="width: 150px; height: 150px;" class="rounded-circle my-3" alt="">
+							<div class="p-3 border-start ms-5" style="width: 70%;">
+								<div class="menu-content ">
+									<p class="text-primary fs-5">{{ starter.title }}</p>
+									<div class="d-flex align-items-center m-3">
+										<span class="text-warning bg-dark p-2 ms-5">Prix: {{ starter.price }}€</span>
+									</div>
+								</div>
+								<div class="menu-ingredients my-3">
+									<b>Ingredients: </b> {{ starter.ingredients }}
+								</div>
+							</div>
+						</div>
+					{% endfor %}
 				</div>
-</div>				
-{% endfor %}
+			</div>
+		</div>
+		{# starter end #}
 
-	</div> #}
-{# starter end #}
 
-{# starters start #}
-<div class="container-fluid">
-    <div class="row justify-content-center">
-		<h2 class="text-center my-5" id="laCarte">La carte du restaurant</h2>
-		<h2 class="text-center my-5">Entrée</h2>
-        <div class="col-lg-6 col-md-8 col-10">
-            {% for starter in starters %}
-            <div class="d-flex align-items-center mb-3">
-                <img src="{{ asset('images/starter/' ~ starter.image) }}" style="width: 150px; height: 150px;" class="rounded-circle my-3" alt="">
-                <div class="p-3 border-start ms-5" style="width: 70%;">
-                    <div class="menu-content ">
-                        <a href="#">{{ starter.title }}</a>
-						<div class="d-flex align-items-center m-3">
-                        <span class="text-warning bg-dark p-2 ms-5">{{ starter.price }}€</span>
+		{# dishs start #}
+		<div class="container-fluid">
+			<div class="row justify-content-center">
+				<h3 class="text-center my-5">Plat</h3>
+				<div class="col-lg-6 col-md-8 col-10">
+					{% for dish in dishs %}
+						<div class="d-flex align-items-center mb-3">
+							<img src="{{ asset('images/dish/' ~ dish.image) }}" style="width: 150px; height: 150px;" class="rounded-circle my-3" alt="">
+							<div class="p-3 border-start ms-5" style="width: 70%;">
+								<div class="menu-content ">
+									<p class="text-primary fs-5">{{ dish.title }}</p>
+									<div class="d-flex align-items-center m-3">
+										<span class="text-warning bg-dark p-2 ms-5">Prix: {{ dish.price }}€</span>
+									</div>
+								</div>
+								<div class="menu-ingredients my-3">
+									<b>Ingredients: </b> {{ dish.ingredients }}
+								</div>
+							</div>
 						</div>
-                    </div>
-                    <div class="menu-ingredients my-3">
-                        {{ starter.ingredients }}
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-    </div>
-</div>
-{# starter end #}
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+		{# dish end #}
 
 
-{# dishs start #}
-<div class="container-fluid">
-    <div class="row justify-content-center">
-		<h3 class="text-center my-5">Plat</h3>
-        <div class="col-lg-6 col-md-8 col-10">
-            {% for dish in dishs %}
-            <div class="d-flex align-items-center mb-3">
-                <img src="{{ asset('images/dish/' ~ dish.image) }}" style="width: 150px; height: 150px;" class="rounded-circle my-3" alt="">
-                <div class="p-3 border-start ms-5" style="width: 70%;">
-                    <div class="menu-content ">
-                        <a href="#">{{ dish.title }}</a>
-						<div class="d-flex align-items-center m-3">
-                        <span class="text-warning bg-dark p-2 ms-5">{{ dish.price }}€</span>
+		{# desserts start #}
+		<div class="container-fluid">
+			<div class="row justify-content-center">
+				<h2 class="text-center my-5">Dessert</h2>
+				<div class="col-lg-6 col-md-8 col-10">
+					{% for dessert in desserts %}
+						<div class="d-flex align-items-center mb-3">
+							<img src="{{ asset('images/dessert/' ~ dessert.image) }}" style="width: 150px; height: 150px;" class="rounded-circle my-3" alt="">
+							<div class="p-3 border-start ms-5" style="width: 70%;">
+								<div class="menu-content ">
+									<p class="text-primary fs-5">{{ dessert.title }}</p>
+									<div class="d-flex align-items-center m-3">
+										<span class="text-warning bg-dark p-2 ms-5">Prix: {{ dessert.price }}€</span>
+									</div>
+								</div>
+								<div class="menu-ingredients my-3">
+									<b>Ingredients: </b>  {{ dessert.ingredients }}
+								</div>
+							</div>
 						</div>
-                    </div>
-                    <div class="menu-ingredients my-3">
-                        {{ dish.ingredients }}
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-    </div>
-</div>
-{# dish end #}
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+		{# dessert end #}
 
-
-{# desserts start #}
-<div class="container-fluid">
-    <div class="row justify-content-center">
-		<h2 class="text-center my-5">Dessert</h2>
-        <div class="col-lg-6 col-md-8 col-10">
-            {% for dessert in desserts %}
-            <div class="d-flex align-items-center mb-3">
-                <img src="{{ asset('images/dessert/' ~ dessert.image) }}" style="width: 150px; height: 150px;" class="rounded-circle my-3" alt="">
-                <div class="p-3 border-start ms-5" style="width: 70%;">
-                    <div class="menu-content ">
-                        <a href="#">{{ dessert.title }}</a>
-						<div class="d-flex align-items-center m-3">
-                        <span class="text-warning bg-dark p-2 ms-5">{{ dessert.price }}€</span>
+		{# drinks start #}
+		<div class="container-fluid">
+			<div class="row justify-content-center">
+				<h2 class="text-center my-5">cocktail</h2>
+				<div class="col-lg-6 col-md-8 col-10">
+					{% for drink in drinks %}
+						<div class="d-flex align-items-center mb-3">
+							<img src="{{ asset('images/drink/' ~ drink.image) }}" style="width: 150px; height: 150px;" class="rounded-circle my-3" alt="">
+							<div class="p-3 border-start ms-5" style="width: 70%;">
+								<div class="menu-content ">
+									<p class="text-primary fs-5">{{ drink.title }}</p>
+									<div class="d-flex align-items-center m-3">
+										<span class="text-warning bg-dark p-2 ms-5">Prix: {{ drink.price }}€</span>
+									</div>
+								</div>
+								<div class="menu-ingredients my-3">
+									<b>Ingredients: </b> {{ drink.ingredients }}
+								</div>
+							</div>
 						</div>
-                    </div>
-                    <div class="menu-ingredients my-3">
-                        {{ dessert.ingredients }}
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-    </div>
-</div>
-{# dessert end #}
-
-{# drinks start #}
-<div class="container-fluid">
-    <div class="row justify-content-center">
-		<h2 class="text-center my-5">Boisson</h2>
-        <div class="col-lg-6 col-md-8 col-10">
-            {% for drink in drinks %}
-            <div class="d-flex align-items-center mb-3">
-                <img src="{{ asset('images/drink/' ~ drink.image) }}" style="width: 150px; height: 150px;" class="rounded-circle my-3" alt="">
-                <div class="p-3 border-start ms-5" style="width: 70%;">
-                    <div class="menu-content ">
-                        <a href="#">{{ drink.title }}</a>
-						<div class="d-flex align-items-center m-3">
-                        <span class="text-warning bg-dark p-2 ms-5">{{ drink.price }}€</span>
-						</div>
-                    </div>
-                    <div class="menu-ingredients my-3">
-                        {{ drink.ingredients }}
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-    </div>
-</div>
-{# drink end #}
-
-
-
-
-
-
+					{% endfor %}
+				</div>
+			</div>
+			<p class="d-flex justify-content-center my-5 ">
+				<a class="btn btn-dark" href="{{ path('carte_all') }}">Voir La carte</a>
+			</p>
+		</div>
+		{# drink end #}
 
 
 		{# notre restaurant start #}
@@ -238,7 +232,6 @@
 		{# notre restaurant end #}
 
 
-
 		{# publication start #}
 		<h2 class="text-center my-5">Les plus récente publications</h2>
 		<p class="d-flex justify-content-center my-5 ">
@@ -248,13 +241,13 @@
 			{% for publication in publications|slice(0, 4) %}
 				{# Limite aux 3 premières publications #}
 				{# <tr>
-								<td>{{ publication.title }}</td>
-								<td>{{ publication.content }}</td>
-								<td>{{ publication.publishedAt ? publication.publishedAt|date('Y-m-d H:i:s') : '' }}</td>
-								<td>{{ publication.image }}</td>
-								<td>{{ publication.category.name }}</td>
-								<td>{{ publication.user.name }}</td>
-							</tr> #}
+												<td>{{ publication.title }}</td>
+												<td>{{ publication.content }}</td>
+												<td>{{ publication.publishedAt ? publication.publishedAt|date('Y-m-d H:i:s') : '' }}</td>
+												<td>{{ publication.image }}</td>
+												<td>{{ publication.category.name }}</td>
+												<td>{{ publication.user.name }}</td>
+											</tr> #}
 
 					<div class="card m-5 " style="width: 25rem;"> <div class="card-body">
 						<h5 class="card-title">{{publication.title}}</h5>
@@ -275,10 +268,9 @@
 		{# publication end #}
 
 
-
 		{# reviews start #}
 		{# {{ dump(reviews) }} #}
-		<h2 class="text-center my-5"> Avis de nos clients</h2>
+			<h2 class="text-center my-5"> Avis de nos clients</h2>
 		<p class="d-flex justify-content-center my-5 ">
 			<a class="btn btn-dark" href="{{ path('app_review_all') }}">Voir plus d'avis</a>
 		</p>
@@ -307,9 +299,6 @@
 		<div class="navigation d-flex flex-wrap justify-content-center m-5">
 			{{knp_pagination_render(reviews)}}
 		</div>
-
-
-		
 
 
 	</div>

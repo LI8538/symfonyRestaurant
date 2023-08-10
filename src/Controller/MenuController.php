@@ -4,12 +4,16 @@ namespace App\Controller;
 
 use App\Entity\Menu;
 use App\Form\MenuType;
+use App\Repository\DishRepository;
 use App\Repository\MenuRepository;
+use App\Repository\DrinkRepository;
+use App\Repository\DessertRepository;
+use App\Repository\StarterRepository;
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 #[Route('/menu')]
 class MenuController extends AbstractController
@@ -19,6 +23,18 @@ class MenuController extends AbstractController
     {
         return $this->render('menu/index.html.twig', [
             'menus' => $menuRepository->findAll(),
+        ]);
+    }
+
+    #[Route('/all', name: 'carte_all', methods: ['GET'])]
+    public function all(StarterRepository $starterRepository,DishRepository $dishRepository,DrinkRepository $drinkRepository,DessertRepository $dessertRepository,MenuRepository $menuRepository): Response
+    {
+        return $this->render('pages/carte_All.html.twig', [
+            'starters' => $starterRepository->findAll(),
+            'menus' => $menuRepository->findAll(),
+            'dishs' => $dishRepository->findAll(),
+            'drinks' => $drinkRepository->findAll(),
+            'desserts' => $dessertRepository->findAll(),
         ]);
     }
 

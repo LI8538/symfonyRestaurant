@@ -24,6 +24,16 @@ class DishController extends AbstractController
         ]);
     }
 
+
+    #[Route('/all', name: 'carte_all', methods: ['GET'])]
+    public function all(DishRepository $dishRepository): Response
+    {
+        return $this->render('pages/carte_All.html.twig', [
+            'dishes' => $dishRepository->findAll(),
+        ]);
+    }
+
+
     #[Route('/new', name: 'app_dish_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager, SluggerInterface $slugger): Response
     {

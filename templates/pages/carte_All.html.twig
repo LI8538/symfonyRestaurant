@@ -1,0 +1,113 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}La Table Élégance
+{% endblock %}
+
+{% block body %}
+	
+		{# starters start #}
+			<div class="container-fluid"> <div class="row justify-content-center">
+				<h2 class="text-center my-5" id="laCarte">La carte du restaurant</h2>
+				<h2 class="text-center my-5">Entrée</h2>
+				<div class="col-lg-6 col-md-8 col-10">
+					{% for starter in starters %}
+						<div class="d-flex align-items-center mb-3">
+							<img src="{{ asset('images/starter/' ~ starter.image) }}" style="width: 150px; height: 150px;" class="rounded-circle my-3" alt="">
+							<div class="p-3 border-start ms-5" style="width: 70%;">
+								<div class="menu-content ">
+									<p class="text-primary fs-5">{{ starter.title }}</p>
+									<div class="d-flex align-items-center m-3">
+										<span class="text-warning bg-dark p-2 ms-5">Prix: {{ starter.price }}€</span>
+									</div>
+								</div>
+								<div class="menu-ingredients my-3">
+									<b>Ingredients: </b> {{ starter.ingredients }}
+								</div>
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+		{# starter end #}
+
+
+		{# dishs start #}
+		<div class="container-fluid">
+			<div class="row justify-content-center">
+				<h3 class="text-center my-5">Plat</h3>
+				<div class="col-lg-6 col-md-8 col-10">
+					{% for dish in dishs %}
+						<div class="d-flex align-items-center mb-3">
+							<img src="{{ asset('images/dish/' ~ dish.image) }}" style="width: 150px; height: 150px;" class="rounded-circle my-3" alt="">
+							<div class="p-3 border-start ms-5" style="width: 70%;">
+								<div class="menu-content ">
+									<p class="text-primary fs-5">{{ dish.title }}</p>
+									<div class="d-flex align-items-center m-3">
+										<span class="text-warning bg-dark p-2 ms-5">Prix: {{ dish.price }}€</span>
+									</div>
+								</div>
+								<div class="menu-ingredients my-3">
+									<b>Ingredients: </b> {{ dish.ingredients }}
+								</div>
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+		{# dish end #}
+
+
+		{# desserts start #}
+		<div class="container-fluid">
+			<div class="row justify-content-center">
+				<h2 class="text-center my-5">Dessert</h2>
+				<div class="col-lg-6 col-md-8 col-10">
+					{% for dessert in desserts %}
+						<div class="d-flex align-items-center mb-3">
+							<img src="{{ asset('images/dessert/' ~ dessert.image) }}" style="width: 150px; height: 150px;" class="rounded-circle my-3" alt="">
+							<div class="p-3 border-start ms-5" style="width: 70%;">
+								<div class="menu-content ">
+									<p class="text-primary fs-5">{{ dessert.title }}</p>
+									<div class="d-flex align-items-center m-3">
+										<span class="text-warning bg-dark p-2 ms-5">Prix: {{ dessert.price }}€</span>
+									</div>
+								</div>
+								<div class="menu-ingredients my-3">
+									<b>Ingredients: </b>  {{ dessert.ingredients }}
+								</div>
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+		{# dessert end #}
+
+		{# drinks start #}
+		<div class="container-fluid">
+			<div class="row justify-content-center">
+				<h2 class="text-center my-5">cocktail</h2>
+				<div class="col-lg-6 col-md-8 col-10">
+					{% for drink in drinks %}
+						<div class="d-flex align-items-center mb-3">
+							<img src="{{ asset('images/drink/' ~ drink.image) }}" style="width: 150px; height: 150px;" class="rounded-circle my-3" alt="">
+							<div class="p-3 border-start ms-5" style="width: 70%;">
+								<div class="menu-content ">
+									<p class="text-primary fs-5">{{ drink.title }}</p>
+									<div class="d-flex align-items-center m-3">
+										<span class="text-warning bg-dark p-2 ms-5">Prix: {{ drink.price }}€</span>
+									</div>
+								</div>
+								<div class="menu-ingredients my-3">
+									<b>Ingredients: </b> {{ drink.ingredients }}
+								</div>
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+		{# drink end #}
+{% endblock %}

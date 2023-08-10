@@ -4,6 +4,9 @@ namespace App\Controller;
 
 use App\Entity\Starter;
 use App\Form\StarterType;
+use App\Repository\DishRepository;
+use App\Repository\DrinkRepository;
+use App\Repository\DessertRepository;
 use App\Repository\StarterRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -23,6 +26,19 @@ class StarterController extends AbstractController
             'starters' => $starterRepository->findAll(),
         ]);
     }
+
+
+    #[Route('/all', name: 'carte_all', methods: ['GET'])]
+    public function all(StarterRepository $starterRepository,DishRepository $dishRepository,DrinkRepository $drinkRepository,DessertRepository $dessertRepository): Response
+    {
+        return $this->render('pages/carte_All.html.twig', [
+            'starters' => $starterRepository->findAll(),
+            'dishs' => $dishRepository->findAll(),
+            'drinks' => $drinkRepository->findAll(),
+            'desserts' => $dessertRepository->findAll(),
+        ]);
+    }
+
 
     #[Route('/new', name: 'app_starter_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager, SluggerInterface $slugger): Response
