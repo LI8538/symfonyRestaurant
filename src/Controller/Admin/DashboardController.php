@@ -10,6 +10,7 @@ use App\Entity\Dessert;
 use App\Entity\Starter;
 use App\Entity\Category;
 use App\Entity\Publication;
+use App\Entity\Reservation;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -42,11 +43,12 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
         // yield MenuItem::linkToCrud('The Label', 'fas fa-list', EntityClass::class);
         yield MenuItem::section('Gestion');
+        yield MenuItem::linkToCrud('Réservation', 'fas fa-calendar-days', Reservation::class);
         yield MenuItem::linkToCrud('Users', 'fas fa-users', User::class);
         yield MenuItem::linkToCrud('Publications', 'fas fa-envelope', Publication::class);
         yield MenuItem::linkToCrud('Reviews', 'fas fa-comments', Review::class);
         yield MenuItem::linkToCrud('Category', 'fas fa-folder-open', Category::class);
-        //gestion de menu
+        //gestion la carte
         yield MenuItem::section('Gestion la carte');
         yield MenuItem::linkToCrud('Entrée', 'fas fa-egg', Starter::class);
         yield MenuItem::linkToCrud('Plats', 'fas fa-utensils', Dish::class);
